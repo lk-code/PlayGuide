@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PlayGuide (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PlayGuide (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
