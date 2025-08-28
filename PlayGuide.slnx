@@ -10,7 +10,6 @@
     <File Path=".vsconfig" />
     <File Path="LICENSE" />
     <File Path="README.md" />
-    <File Path="PlayGuide.slnx" />
   </Folder>
   <Project Path="source\PlayGuide.Core\PlayGuide.Core.csproj" Type="Classic C#">
     <Configuration Solution="Debug|ARM64" Project="Debug|arm64" />
