@@ -1,4 +1,4 @@
-﻿<Solution>
+<Solution>
   <Configurations>
     <Platform Name="ARM64" />
     <Platform Name="x64" />
@@ -11,11 +11,11 @@
     <File Path="LICENSE" />
     <File Path="README.md" />
   </Folder>
-  <Project Path="source\PlayGuide.Core\PlayGuide.Core.csproj" Type="Classic C#">
+  <Project Path="source\PlayGuide.Core\PlayGuide.Core.csproj">
     <Configuration Solution="Debug|ARM64" Project="Debug|arm64" />
     <Configuration Solution="Release|ARM64" Project="Release|arm64" />
   </Project>
-  <Project Path="source\PlayGuide\PlayGuide.csproj" Type="Classic C#">
+  <Project Path="source\PlayGuide\PlayGuide.csproj">
     <Configuration Solution="Debug|ARM64" Project="Debug|ARM64|Deploy" />
     <Configuration Solution="Debug|x64" Project="Debug|x64|Deploy" />
     <Configuration Solution="Debug|x86" Project="Debug|x86|Deploy" />
