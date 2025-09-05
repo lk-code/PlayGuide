@@ -10,6 +10,7 @@
     <Grid x:Name="ContentArea">
         <Grid.RowDefinitions>
             <RowDefinition Height="48" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -18,9 +19,66 @@
             x:Uid="Main_Title"
             Style="{StaticResource PageTitleStyle}" />
 
-        <Grid Grid.Row="1">
-            
+        <!-- Status und Refresh Button -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,10">
+            <Button Content="Spiele aktualisieren" Command="{Binding LoadGamesCommand}" Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding StatusMessage}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <ProgressRing IsActive="{Binding IsLoading}" Width="20" Height="20" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <!-- Spiele Liste -->
+        <Grid Grid.Row="2">
+            <ScrollViewer>
+                <ListView ItemsSource="{Binding Games}" SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,5,0,5" Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Icon placeholder -->
+                                <Border Grid.Column="0" Width="48" Height="48" CornerRadius="4"
+                                        Background="{ThemeResource AccentFillColorDefaultBrush}"
+                                        Margin="0,0,10,0">
+                                    <FontIcon Glyph="&#xE7FC;" FontSize="24"
+                                              Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+                                </Border>
+
+                                <!-- Game Info -->
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" FontSize="16"/>
+                                    <TextBlock Text="{Binding Publisher}" FontSize="12"
+                                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                    <TextBlock Text="{Binding Version}" FontSize="10"
+                                               Foreground="{ThemeResource TextFillColorTertiaryBrush}"/>
+                                </StackPanel>
+
+                                <!-- Launch Button -->
+                                <Button Grid.Column="2" Content="▶" ToolTipService.ToolTip="Spiel starten"
+                                        IsEnabled="{Binding ExecutablePath, Converter={StaticResource StringToBoolConverter}}"
+                                        Margin="10,0,0,0"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+
+            <!-- Empty State -->
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Visibility="{Binding Games.Count, Converter={StaticResource IntToVisibilityConverter}}">
+                <FontIcon Glyph="&#xE7FC;" FontSize="48"
+                          Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                <TextBlock Text="Keine Spiele gefunden"
+                           Style="{StaticResource SubtitleTextBlockStyle}"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                           Margin="0,10,0,0"/>
+                <TextBlock Text="Klicke auf 'Spiele aktualisieren' um zu beginnen"
+                           Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
         </Grid>
-        
     </Grid>
 </Page>

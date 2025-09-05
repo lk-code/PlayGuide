@@ -1,7 +1,5 @@
 ﻿using System.Text;
-
 using Newtonsoft.Json;
-
 using PlayGuide.Core.Contracts.Services;
 
 namespace PlayGuide.Core.Services;

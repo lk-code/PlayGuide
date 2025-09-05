@@ -4,7 +4,9 @@ using Microsoft.UI.Xaml;
 
 using PlayGuide.Activation;
 using PlayGuide.Contracts.Services;
+using PlayGuide.Core.Contracts;
 using PlayGuide.Core.Contracts.Services;
+using PlayGuide.Core;
 using PlayGuide.Core.Services;
 using PlayGuide.Helpers;
 using PlayGuide.Models;
@@ -65,6 +67,7 @@ public partial class App : Application
 
             // Core Services
             services.AddSingleton<IFileService, FileService>();
+            services.AddSingleton<IGamesProvider, GamesProvider>();
 
             // Views and ViewModels
             services.AddTransient<SettingsViewModel>();
