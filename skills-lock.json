@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "dotnet-best-practices": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "skillPath": "skills/dotnet-best-practices/SKILL.md",
+      "computedHash": "9ef94db7f06c167d544369817e5a4415eeb7886dcff0d47026837a1aada260e3"
+    },
+    "dotnet-uno-platform": {
+      "source": "wshaddix/dotnet-skills",
+      "sourceType": "github",
+      "skillPath": "skills/dotnet-uno-platform/SKILL.md",
+      "computedHash": "0ea022dd234042d02021f216868b865ee4be51b6fc5089a5d029a75825bc387c"
+    }
+  }
+}

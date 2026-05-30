@@ -15,12 +15,4 @@
     <Configuration Solution="Debug|ARM64" Project="Debug|arm64" />
     <Configuration Solution="Release|ARM64" Project="Release|arm64" />
   </Project>
-  <Project Path="source\PlayGuide\PlayGuide.csproj">
-    <Configuration Solution="Debug|ARM64" Project="Debug|ARM64|Deploy" />
-    <Configuration Solution="Debug|x64" Project="Debug|x64|Deploy" />
-    <Configuration Solution="Debug|x86" Project="Debug|x86|Deploy" />
-    <Configuration Solution="Release|ARM64" Project="Release|ARM64|Deploy" />
-    <Configuration Solution="Release|x64" Project="Release|x64|Deploy" />
-    <Configuration Solution="Release|x86" Project="Release|x86|Deploy" />
-  </Project>
 </Solution>
